@@ -1,0 +1,16 @@
+2025-02-04 11:12:12 Error: [2] require_once(config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ai_fluency_lms\public\index.php on line 49
+2025-02-04 11:13:16 Error: [2] require_once(config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ai_fluency_lms\public\index.php on line 49
+2025-02-04 11:13:32 Error: [2] require_once(config.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ai_fluency_lms\public\index.php on line 49
+2025-02-04 12:29:06 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:30:14 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:30:34 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:30:40 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:31:38 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:31:42 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:31:45 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:35:04 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:35:16 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:35:28 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:37:11 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:37:24 Error: [2] Undefined array key "role" in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 38
+2025-02-04 12:38:00 Error: [8192] Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\ai_fluency_lms\public\register.php on line 13

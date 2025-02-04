@@ -1,0 +1,2 @@
+<?php
+// Quiz management

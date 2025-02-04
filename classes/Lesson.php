@@ -1,0 +1,2 @@
+<?php
+// Lesson management class
