@@ -1,0 +1,147 @@
+/* Modules styles */
+.modules-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.modules-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.module-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-header {
+    margin-bottom: 1rem;
+}
+
+.module-title {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.module-description {
+    color: #666;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.progress-indicator {
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    background: #eee;
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress {
+    background: #4CAF50;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.module-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.admin-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Button styles */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1976D2;
+}
+
+.btn-secondary {
+    background: #757575;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #616161;
+}
+
+.btn-danger {
+    background: #f44336;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #d32f2f;
+}
+
+/* Module-Form Styles*/
+.form-container{
+    margin: 5rem 3rem 2rem 3rem;
+    /* margin-bottom: 2rem;
+    margin-top: 5rem; */
+}
+
+@media (max-width: 768px) {
+    .modules-container {
+        padding: 1rem;
+    }
+
+    .modules-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .module-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .admin-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}

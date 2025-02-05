@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = $_POST['password'];
 
         if ($auth->login($email, $password)) {
-            header('Location: /dashboard.php');
+            header('Location: ../public/dashboard.php');
             exit;
         }
     } catch (Exception $e) {
@@ -66,10 +66,10 @@ include '../includes/header.php';
             <button type="submit" class="btn btn-primary btn-block">Login</button>
 
             <div class="auth-links">
-                <a href="forgot-password.php" class="forgot-password">Forgot your password?</a>
+                <a href="../public/forgot-password.php" class="forgot-password">Forgot your password?</a>
                 <p class="register-link">
                     Don't have an account? 
-                    <a href="register.php">Register here</a>
+                    <a href="../public/register.php">Register here</a>
                 </p>
             </div>
         </form>

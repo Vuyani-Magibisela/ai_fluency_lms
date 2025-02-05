@@ -14,20 +14,17 @@ class Auth {
             if (empty($username) || empty($email) || empty($password)) {
                 throw new Exception("All fields are required");
             }
-
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 throw new Exception("Invalid email format");
             }
-
             $stmt = $this->db->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
             $stmt->execute([$username, $email]);
             if ($stmt->rowCount() > 0) {
                 throw new Exception("Username or email already exists");
             }
-
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $this->db->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
-            
+           
             return $stmt->execute([$username, $email, $password_hash]);
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
@@ -39,7 +36,6 @@ class Auth {
             $stmt = $this->db->prepare("SELECT id, username, email, password_hash, role FROM users WHERE email = ?");
             $stmt->execute([$email]);
             $user = $stmt->fetch();
-
             if ($user && password_verify($password, $user['password_hash'])) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
@@ -57,5 +53,29 @@ class Auth {
         SessionManager::destroy();
         header('Location: ../public/index.php');
         exit();
+    }
+
+    public static function check() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: login.php');
+            exit();
+        }
+        return true;
+    }
+
+    public static function isAdmin() {
+        return isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+    }
+
+    public static function getRole() {
+        return $_SESSION['role'] ?? 'user';
+    }
+
+    public static function getUserId() {
+        return $_SESSION['user_id'] ?? null;
     }
 }

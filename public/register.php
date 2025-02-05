@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($auth->register($username, $email, $password)) {
             // Auto login after registration
             $auth->login($email, $password);
-            header('Location: /dashboard.php');
+            header('Location: ../public/dashboard.php');
             exit;
         }
     } catch (Exception $e) {
