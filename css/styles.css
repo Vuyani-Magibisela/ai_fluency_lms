@@ -159,6 +159,10 @@ body {
     transition: background 0.3s;
 }
 
+.nav-cta{
+    color: white; !important   
+}
+
 .cta-button:hover {
     background: #4338ca;
 }

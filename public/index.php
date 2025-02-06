@@ -26,8 +26,8 @@
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 <?php else: ?>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="register.php" class="cta-button">Get Started</a></li>
+                    <li><a href="login.php" class="cta-button"><span class="nav-cta">Login</span></a></li>
+                    <li><a href="register.php" class="cta-button "><span class="nav-cta">Get Started</span></a></li>
                 <?php endif; ?>
             </ul>
         </nav>

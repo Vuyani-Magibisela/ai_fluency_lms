@@ -38,8 +38,8 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
                     <li><a href="../public/course-list.php">Courses</a></li>
                     <li><a href="../public/logout.php">Logout</a></li>
                 <?php else: ?>
-                    <li><a href="../public/login.php">Login</a></li>
-                    <li><a href="../public/register.php" class="cta-button">Get Started</a></li>
+                    <li><a href="../public/login.php" >Login</a></li>
+                    <li><a href="../public/register.php" class="cta-button"><span class="nav-cta">Get Started</span></a></li>
                 <?php endif; ?>
             </ul>
         </nav>
