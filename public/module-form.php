@@ -37,9 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $success = $moduleObj->updateModule($module['id'], $title, $description);
         } else {
             // Create new module
-            $success = $moduleObj->createModule($title, $description);
+            $success = $moduleObj->createModule($couseId, $title, $description);
         }
-
+        // $courseId, $title, $description
         if ($success) {
             header('Location: modules.php');
             exit();

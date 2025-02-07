@@ -23,3 +23,5 @@
 2025-02-05 09:32:23 Error: [8192] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in C:\xampp\htdocs\ai_fluency_lms\classes\dashboard.php on line 70
 2025-02-05 12:55:16 Error: [2] Undefined variable $isAdmin in C:\xampp\htdocs\ai_fluency_lms\includes\header.php on line 28
 2025-02-05 14:40:26 Error: [2] require_once(../classes/Course.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ai_fluency_lms\public\course-list.php on line 4
+2025-02-07 11:54:22 Error: [2] Undefined variable $couseId in C:\xampp\htdocs\ai_fluency_lms\public\module-form.php on line 40
+2025-02-07 11:55:24 Error: [2] Undefined variable $couseId in C:\xampp\htdocs\ai_fluency_lms\public\module-form.php on line 40

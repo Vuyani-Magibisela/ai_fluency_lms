@@ -41,18 +41,37 @@ class Module {
         return $module;
     }
 
-    public function createModule($title, $description) {
-        // Get the highest order number
-        try {
-            $maxOrder = $this->db->query("SELECT MAX(order_number) FROM modules")->fetchColumn();
-            $nextOrder = $maxOrder ? $maxOrder + 1 : 1;
-        } catch (PDOException $e) {
-            $nextOrder = 0; // If order_number column doesn't exist
+    public function createModule($courseId, $title, $description) {
+        // Verify course exists first
+        $courseCheck = "SELECT id FROM courses WHERE id = ?";
+        $stmt = $this->db->prepare($courseCheck);
+        $stmt->execute([$courseId]);
+        if (!$stmt->fetch()) {
+            throw new Exception("Course with ID $courseId does not exist");
         }
 
-        $query = "INSERT INTO modules (title, description, order_number) VALUES (?, ?, ?)";
+        // Get the highest order number for this course
+        $maxOrderQuery = "SELECT MAX(order_number) FROM modules WHERE course_id = ?";
+        $stmt = $this->db->prepare($maxOrderQuery);
+        $stmt->execute([$courseId]);
+        $maxOrder = $stmt->fetchColumn();
+        $nextOrder = $maxOrder ? $maxOrder + 1 : 1;
+
+        $query = "INSERT INTO modules (course_id, title, description, order_number) 
+                 VALUES (?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        return $stmt->execute([$title, $description, $nextOrder]);
+        return $stmt->execute([$courseId, $title, $description, $nextOrder]);
+    }
+
+    public function getModulesByCourse($courseId) {
+        $query = "SELECT m.*, 
+                    (SELECT COUNT(*) FROM lessons WHERE module_id = m.id) as lesson_count
+                 FROM modules m 
+                 WHERE m.course_id = ? 
+                 ORDER BY m.order_number, m.id";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute([$courseId]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function updateModule($id, $title, $description, $orderNumber = null) {
